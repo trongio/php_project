@@ -27,8 +27,16 @@ class PostController
         ];
         $poster_name=getCurrentUser();
 
+        $maxid=$input->get_max_id();
+
+        $filepath = "../views/images/" . $maxid .".png";
+        if(move_uploaded_file($_FILES["post_image"]["tmp_name"], $filepath)){
+            $temp  = true;
+        };
+
         if(empty($errors)){
-            $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$data['post_image']);
+            $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$maxid .".png");
+            return $router->renderView('home', $params);
         } else return $router->renderView('post', $params);
     }
 }

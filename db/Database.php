@@ -1,13 +1,15 @@
 <?php
 
 namespace app\db;
+use \PDO;
+
 
 class Database
 {
     /**
      * @var \PDO
      */
-    public $pdo;
+    public PDO $pdo;
     public function __construct()
     {
         $config = require __DIR__ . '/../config.php';
@@ -56,5 +58,18 @@ class Database
         $statement->bindParam(':post_date',$post_date);
         $statement->bindParam(':post_image',$post_image);
         return $statement->execute();
+    }
+
+    public function get_max_id(){
+        $statement = $this->pdo->prepare("SELECT MAX(id) FROM posts");
+        $statement->execute();
+        $maxid= $statement->fetchAll(PDO::FETCH_ASSOC);
+        return intval($maxid[0]['MAX(id)'])+1;
+    }
+
+    public function get_table(){
+        $statement = $this->pdo->prepare("SELECT * FROM posts");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }

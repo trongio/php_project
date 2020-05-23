@@ -67,6 +67,7 @@ class Router
          * 111<h1>Home page</h1>
          */
         ob_start();
+        if(is_array($view) or $view == '/') $view = '/home';
         include_once __DIR__ . '/views/'.$view.'.php';
         return ob_get_clean(); /**  */
     }

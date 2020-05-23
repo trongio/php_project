@@ -2,7 +2,7 @@
 ?>
 <div class="container">
     <h1>create post</h1>
-    <form method="post" action="/post">
+    <form method="post" action="/post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="post_title">Post title:</label>
@@ -26,12 +26,12 @@
             <div class="photo">
                 <h>Select image : &nbsp;</h>
                 <div>
-                    <input class="btn btn-secondary" type="file" name="post_image"><br/>
+                    <input class="btn btn-secondary" type="file" name="post_image" id="post_image"><br/>
                 </div>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
     </form>
 </div>

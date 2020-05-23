@@ -23,10 +23,11 @@
         </div>
 
         <div class="form-group">
-            <div class="custom-file">
-                <input type="file" name="post_image" class="custom-file-input" id="post_image"
-                       aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            <div class="photo">
+                <h>Select image : &nbsp;</h>
+                <div>
+                    <input class="btn btn-secondary" type="file" name="post_image"><br/>
+                </div>
             </div>
         </div>
 

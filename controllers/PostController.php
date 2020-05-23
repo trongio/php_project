@@ -25,9 +25,10 @@ class PostController
             'errors' => $errors,
             'data' => $data
         ];
+        $poster_name=getCurrentUser();
 
         if(empty($errors)){
-            $input->post($data['post_title'], $data['post_text'],getCurrentUser(),date("Y-m-d h:i:sa"),$data['post_image']);
+            $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$data['post_image']);
         } else return $router->renderView('post', $params);
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "1/my-framework",
+    "authors": [
+        {
+            "name": "trongio",
+            "email": "giokakabadze50@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "."
+        }
+    }
+}

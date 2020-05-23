@@ -36,7 +36,7 @@
                 </li>
                 <?php if (getCurrentUser()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
+                        <a class="nav-link" href="/post">Create post</a>
                     </li>
                 <?php endif; ?>
             </ul>

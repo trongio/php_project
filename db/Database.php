@@ -49,7 +49,7 @@ class Database
     public function post($post_title,$post_text,$poster_name,$post_date,$post_image){
 
         $statement = $this->pdo->prepare("insert into posts (post_title,post_text,poster_name,post_date,post_image) 
-                                                    Values (:post_title,:post_text',:poster_name',post_date',post_image')");
+                                                    Values (:post_title,:post_text,:poster_name,post_date,post_image)");
         $statement->bindParam(':post_title',$post_title);
         $statement->bindParam(':post_text',$post_text);
         $statement->bindParam(':poster_name',$poster_name);

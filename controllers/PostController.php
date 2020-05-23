@@ -27,7 +27,7 @@ class PostController
         ];
 
         if(empty($errors)){
-            $input->post($data['post_title'], $data['post_text'],"????",date("Y-m-d h:i:sa"),$data['post_image']);
-        } else return $router->renderView('register', $params);
+            $input->post($data['post_title'], $data['post_text'],getCurrentUser(),date("Y-m-d h:i:sa"),$data['post_image']);
+        } else return $router->renderView('post', $params);
     }
 }

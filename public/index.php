@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\JsonPlaceholderController;
+use app\controllers\PostController;
 use app\controllers\RegisterController;
 use app\db\Database;
 use app\Request;
@@ -32,5 +33,5 @@ $router->get('/register', 'register');
 $router->post('/register', [RegisterController::class,'register']);
 
 $router->get('/post', 'post');
-$router->post('/post', [RegisterController::class,'post']);
+$router->post('/post', [PostController::class,'post']);
 

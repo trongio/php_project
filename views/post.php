@@ -2,7 +2,7 @@
 ?>
 <div class="container">
     <h1>create post</h1>
-    <form method="post" action="/register">
+    <form method="post" action="/post">
 
         <div class="form-group">
             <label for="post_title">Post title:</label>
@@ -22,10 +22,7 @@
             </div>
         </div>
 
-        <div class="form-group input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
+        <div class="form-group">
             <div class="custom-file">
                 <input type="file" name="post_image" class="custom-file-input" id="post_image"
                        aria-describedby="inputGroupFileAddon01">

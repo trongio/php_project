@@ -29,7 +29,7 @@ class PostController
 
         $maxid=$input->get_max_id();
 
-        $filepath = "../views/images/" . $maxid .".png";
+        $filepath = "images/" . $maxid .".png";
         if(move_uploaded_file($_FILES["post_image"]["tmp_name"], $filepath)){
             $temp  = true;
         };

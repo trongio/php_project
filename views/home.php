@@ -13,7 +13,8 @@
 
                 foreach ($table as $post){
                    echo "<div class=\"card mb-4\">";
-                   echo "<img class=\"card-img-top\" src=\"../views/images/$post[post_image]\" alt=\"Card image cap\">";
+                   if(isset($post['post_image']))
+                   echo "<img class=\"card-img-top\" src=\"images/$post[post_image]\" alt=\"Card image cap\">";
                    echo "<div class=\"card-body\">";
                    echo "<h2 class=\"card-title\">$post[post_title]</h2>";
                    echo "<p class=\"card-text\">$post[post_text]</p></div>";

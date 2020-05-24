@@ -36,7 +36,8 @@ class PostController
 
         if(empty($errors)){
             $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$maxid .".png");
-            return $router->renderView('home', $params);
+//            return $router->renderView('home', $params);
+            header("Location: http://localhost:8080/");
         } else return $router->renderView('post', $params);
     }
 }

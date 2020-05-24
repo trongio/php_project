@@ -11,6 +11,28 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
+    <style>
+        .grid {
+            -webkit-column-count: 3;
+            -webkit-column-gap: 10px;
+            -webkit-column-fill: auto;
+            -moz-column-count: 3;
+            -moz-column-gap: 10px;
+            -moz-column-fill: auto;
+            column-count: 3;
+            column-gap: 15px;
+            column-fill: auto;
+        }
+        .block {
+            display: block;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+            -webkit-column-break-inside: avoid;
+            -moz-column-break-inside: avoid;
+            column-break-inside: avoid;
+        }
+    </style>
+
     <title>Home page</title>
 </head>
 

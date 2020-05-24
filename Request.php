@@ -5,6 +5,7 @@ use \app\IRequest;
 
 class Request implements IRequest
 {
+
     public function __construct()
     {
         foreach ($_SERVER as $key => $value) {
@@ -49,11 +50,9 @@ class Request implements IRequest
 
     public function getPath()
     {
-//        if (strpos($this->requestUri, '?') === false) {
-//            $path = $this->requestUri;
-//        } else {
-            $path = substr($this->requestUri, 0, strpos($this->requestUri, '?') ?: strlen($this->requestUri));
-//        }
+
+        $path = substr($this->requestUri, 0, strpos($this->requestUri, '?') ?: strlen($this->requestUri));
+
         return $path ?? '/';
     }
 }

@@ -67,9 +67,36 @@ class Database
         return intval($maxid[0]['MAX(id)'])+1;
     }
 
-    public function get_table(){
+    public function get_posts(){
         $statement = $this->pdo->prepare("SELECT * FROM posts");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+//    public function get_users(){
+//        $statement = $this->pdo->prepare("SELECT * FROM posts");
+//        $statement->execute();
+//        return $statement->fetchAll(PDO::FETCH_ASSOC);
+//    }
+
+    public function get_email($email){
+        $statement = $this->pdo->prepare("SELECT * FROM users where email = :email");
+        $statement->bindValue(':email',$email);
+        $statement->execute();
+        $user =  $statement->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($user)){
+            return true;
+        }else return false;
+    }
+
+    public function get_full_name($full_name){
+        $statement = $this->pdo->prepare("SELECT * FROM users where full_name = :full_name");
+        $statement->bindValue(':full_name',$full_name);
+        $statement->execute();
+        $user =  $statement->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($user)){
+            return true;
+        }else return false;
+    }
+
 }

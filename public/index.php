@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\JsonPlaceholderController;
+use app\controllers\PersonalController;
 use app\controllers\PostController;
 use app\controllers\RegisterController;
 use app\db\Database;
@@ -35,5 +36,11 @@ $router->post('/register', [RegisterController::class,'register']);
 $router->get('/post', 'post');
 $router->post('/post', [PostController::class,'post']);
 
+$database=new \app\db\Database();
+$table= $database->get_posts();
+
+foreach ($table as $post){
+    $router->get('/'. $post['poster_name'], $post['poster_name']);
+}
 
 

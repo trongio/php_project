@@ -73,11 +73,11 @@ class Database
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//    public function get_users(){
-//        $statement = $this->pdo->prepare("SELECT * FROM posts");
-//        $statement->execute();
-//        return $statement->fetchAll(PDO::FETCH_ASSOC);
-//    }
+    public function get_users(){
+        $statement = $this->pdo->prepare("SELECT full_name,email,reg_date FROM users");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function get_email($email){
         $statement = $this->pdo->prepare("SELECT * FROM users where email = :email");
@@ -97,6 +97,13 @@ class Database
         if(!empty($user)){
             return true;
         }else return false;
+    }
+
+    public function search($search_text){
+        $statement = $this->pdo->prepare("SELECT * FROM posts where post_title like :search_text or post_text like :search_text or poster_name like :search_text");
+        $statement->bindValue(':search_text',"%".$search_text."%");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

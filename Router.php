@@ -63,9 +63,7 @@ class Router
         foreach ($params as $key => $value) {
             $$key = $value;
         }
-        /**
-         * 111<h1>Home page</h1>
-         */
+
         ob_start();
         include_once __DIR__ . '/views/'.$view.'.php';
         return ob_get_clean(); /**  */

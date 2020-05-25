@@ -25,9 +25,7 @@
         <div class="form-group">
             <div class="photo">
                 <h>Select image : &nbsp;</h>
-                <div>
-                    <input class="btn btn-secondary" type="file" name="post_image" id="post_image"><br/>
-                </div>
+                <input class="btn btn-secondary" type="file" name="post_image" id="post_image"><br/>
             </div>
         </div>
 

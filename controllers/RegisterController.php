@@ -40,6 +40,11 @@ class RegisterController
 
         copy('../views/PersonalPageTemplate.php','../views/'.$data['full_name'].'.php');
 
+        $filepath = "../public/images/user_images/" . $data['full_name'] .".png";
+        if(move_uploaded_file($_FILES["user_image"]["tmp_name"], $filepath)){
+            $temp  = true;
+        };
+
         if(empty($errors)){
             $input->register($data['full_name'], $data['email'], password_hash($data['password'], PASSWORD_BCRYPT), date("Y-m-d h:i:sa"));
             return $router->renderView('login', $params);

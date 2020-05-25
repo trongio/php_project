@@ -6,32 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/110b796b02.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-
-    <style>
-        .grid {
-            -webkit-column-count: 3;
-            -webkit-column-gap: 10px;
-            -webkit-column-fill: auto;
-            -moz-column-count: 3;
-            -moz-column-gap: 10px;
-            -moz-column-fill: auto;
-            column-count: 3;
-            column-gap: 15px;
-            column-fill: auto;
-        }
-        .block {
-            display: block;
-            word-wrap: break-word;
-            margin-bottom: 20px;
-            -webkit-column-break-inside: avoid;
-            -moz-column-break-inside: avoid;
-            column-break-inside: avoid;
-        }
-    </style>
 
     <title>Home page</title>
 </head>
@@ -51,10 +31,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="/users">Users</a>
                 </li>
                 <?php if (getCurrentUser()): ?>
                     <li class="nav-item">
@@ -63,6 +40,12 @@
                 <?php endif; ?>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <form class="container" method="get" action="/search" style="align-items: baseline">
+                    <div class="form-group">
+                        <input type="text" class="" id="search_text" name="search_text">
+                    </div>
+                    <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+                </form>
                 <?php if (getCurrentUser()): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">

@@ -2,7 +2,7 @@
 ?>
 <div class="container">
     <h1>Register</h1>
-    <form method="post" action="/register">
+    <form method="post" action="/register" enctype="multipart/form-data">
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" class="form-control <?php echo isset($errors['full_name']) ? ' is-invalid' : '' ?>"
@@ -28,9 +28,12 @@
           </div>
       </div>
       <div class="form-group form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox"> Remember me
-    </label>
+          <div class="form-group">
+              <div class="photo">
+                  <span>Select image : </span>
+                  <input class="btn btn-secondary" type="file" name="user_image" id="user_image"><br/>
+              </div>
+          </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

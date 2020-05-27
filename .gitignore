@@ -1,4 +1,5 @@
 .idea
 /vendor/
 config.php
-public/images/*.*
+public/images/*.png
+public/images/user_images/*.png

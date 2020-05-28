@@ -13,7 +13,7 @@
             foreach (array_reverse($table) as $post){
                 if($post['poster_name']==substr($_SERVER['PATH_INFO'],1)){
                     echo "<div class=\"block card \">";
-                    if (isset($post['post_image']))
+                    if($post['post_image']!=false)
                         echo "<img class=\"card-img-top\" src=\"images/$post[post_image]\" alt=\"Card image cap\">";
                     echo "<div class=\"card-body\">";
                     echo "<h2 class=\"card-title\">$post[post_title]</h2>";

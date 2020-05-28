@@ -48,7 +48,7 @@ class Database
         return $statement->execute();
     }
 
-    public function post($post_title,$post_text,$poster_name,$post_date,$post_image){
+    public function post($post_title,$post_text,$poster_name,$post_date,$post_image = null){
 
         $statement = $this->pdo->prepare("insert into posts (post_title,post_text,poster_name,post_date,post_image) 
                                                     Values (:post_title,:post_text,:poster_name,:post_date,:post_image)");

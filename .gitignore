@@ -3,3 +3,9 @@
 config.php
 public/images/*.png
 public/images/user_images/*.png
+views/azael.php
+views/bob.php
+views/plato.php
+views/ala.php
+views/tester.php
+views/zizi.php

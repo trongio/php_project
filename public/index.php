@@ -7,7 +7,6 @@ use app\db\Database;
 use app\Request;
 use app\Router;
 use app\controllers\LoginController;
-use app\controllers\SearchController;
 
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../helpers.php';
@@ -22,7 +21,6 @@ $router->get('/', 'home');
 $router->get('/users', 'users');
 
 $router->get('/search', 'search');
-$router->post('/search', [SearchController::class, 'search']);
 
 $router->get('/login', [LoginController::class, 'renderLogin']);
 $router->post('/login', [LoginController::class, 'login']);

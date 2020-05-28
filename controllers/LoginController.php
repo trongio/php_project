@@ -12,6 +12,7 @@ class LoginController
         $router->layout = '_login_layout';
         return $router->renderView('login');
     }
+
     public function login(IRequest $request, Router $router)
     {
         $body = $request->getBody();

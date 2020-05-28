@@ -27,15 +27,16 @@ class PostController
         ];
         $poster_name=getCurrentUser();
 
-        $maxid=$input->get_max_id();
-
-        $filepath = "images/" . $maxid .".png";
-        if(move_uploaded_file($_FILES["post_image"]["tmp_name"], $filepath)){
-            $temp  = true;
-        };
+        if($_FILES["post_image"]["tmp_name"]!=false) {
+            $maxid = $input->get_max_id(). ".png";
+            $filepath = "images/" . $maxid;
+            if (move_uploaded_file($_FILES["post_image"]["tmp_name"], $filepath)) {
+                $temp = true;
+            }
+        }
 
         if(empty($errors)){
-            $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$maxid .".png");
+            $input->post($data['post_title'], $data['post_text'],$poster_name['full_name'],date("Y-m-d h:i:sa"),$maxid);
 //            return $router->renderView('home', $params);
             header("Location: http://localhost:8080/");
         } else return $router->renderView('post', $params);
